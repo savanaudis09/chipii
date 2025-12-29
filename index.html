@@ -4,141 +4,215 @@
 <meta charset="UTF-8">
 <title>For You 💌</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'Comfortaa', cursive;
-    overflow: hidden;
-    height: 100vh;
-  }
+/* ================= BASE ================= */
+body {
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  .page {
-    width: 100%;
-    height: 100%;
-    display: none;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-  }
+.page {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  .active {
-    display: flex;
-  }
+.page.active {
+  display: flex;
+}
 
-  /* PAGE BACKGROUNDS */
-  #page1, #page3, #page5 {
-    background: #fff7f2;
-  }
+/* ================= COMMON CONTENT LAYOUT ================= */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  gap: 28px;
+}
 
-  #page2 {
-    background: #ffe2e2;
-  }
+/* ================= BACKGROUNDS ================= */
+#page1, #page3, #page5, #page7, #page8 {
+  background: #fff7f2;
+}
+#page2 { background: #ffe2e2; }
+#page4 { background: #f2f2f5; }
 
-  #page4 {
-    background: #f2f2f5;
-  }
+/* ================= PAGE 6 PAW BACKGROUND ================= */
+#page6 {
+  background-color: #fffaf6;
+  background-image: url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cbbeb3' fill-opacity='0.35'%3E%3Cpath d='M40 55c6 0 11-5 11-11s-5-11-11-11-11 5-11 11 5 11 11 11zm60 0c6 0 11-5 11-11s-5-11-11-11-11 5-11 11 5 11 11 11zM55 40c0 6 5 11 11 11s11-5 11-11-5-11-11-11-11 5-11 11zm0 60c0 10 15 16 25 16s25-6 25-16-15-22-25-22-25 12-25 22z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
 
-  #page6, #page7, #page8 {
-    background: #fff7f2;
-  }
+/* ================= IMAGES ================= */
+.main-img {
+  width: 260px;
+  max-width: 80%;
+  object-fit: contain;
+}
 
-  /* IMAGES */
-  .main-img {
-    max-width: 260px;
-    max-height: 260px;
-    object-fit: contain;
-    animation: fadeIn 1.2s ease forwards;
-  }
+/* ================= TEXT ================= */
+.text {
+  font-size: 20px;
+  color: #5a4a42;
+  line-height: 1.4;
+}
 
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+/* ================= BUTTONS ================= */
+.button-group {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  /* TEXT */
-  .text {
-    font-size: 20px;
-    margin-top: 20px;
-    color: #5a4a42;
-  }
+button {
+  padding: 12px 28px;
+  font-size: 14px;
+  border-radius: 22px;
+  border: 1px solid #e2b7c9;
+  background: #ffffff;
+  cursor: pointer;
+  font-family: 'Comfortaa', cursive;
+  color: #c86b97;
+  box-shadow: 0 4px 10px rgba(180,140,120,0.3);
+  transition: transform 0.2s ease;
+}
 
-  /* BUTTONS */
-  .buttons {
-    margin-top: 25px;
-  }
+button:hover {
+  transform: translateY(-2px);
+}
 
-  button {
-    padding: 10px 28px;
-    font-size: 15px;
-    margin: 0 10px;
-    border-radius: 22px;
-    border: 1px solid #e867ae;
-    background: white;
-    cursor: pointer;
-    font-family: 'Comfortaa', cursive;
-    color: #f479ac;
-    box-shadow: 0 4px 8px rgba(199,161,122,0.45);
-    transition: all 0.2s ease;
-  }
+/* ================= PAGE 5 ================= */
+#page5 {
+  flex-direction: column;
+  padding-top: 40px;
+}
 
-  button:hover {
-    transform: translateY(-2px);
-  }
+#page5 .title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #5a4a42;
+  margin-bottom: 45px;
+}
 
-  /* PAGE 2 BUTTON */
-  #page2 button {
-    color: #b94a4a;
-    border-color: #d98b8b;
-  }
+.gift-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
 
-  /* PAGE 4 BUTTON */
-  #page4 button {
-    color: #3a2e2c;
-    border-color: #5a4a42;
-  }
+.gift-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
 
-  /* PAGE 5 STYLES */
-  .title {
-    font-size: 26px;
-    font-weight: 600;
-    color: #5a4a42;
-    margin-bottom: 40px;
-  }
+.gift-img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
 
+.gift-text {
+  font-size: 18px;
+  color: #5a4a42;
+}
+
+/* ---- Mobile: 2 + 1 layout ---- */
+@media (max-width: 768px) {
   .gift-container {
-    display: flex;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
+  .gift-card:last-child {
+    grid-column: span 2;
+  }
+}
 
-  .gift-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+/* ================= PAGE 6 ================= */
+#page6 {
+  flex-direction: column;
+  padding-top: 40px;
+  gap: 22px;
+}
 
-  .gift-img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    margin-bottom: 12px;
-  }
+.page6-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #5a4a42;
+}
 
-  .gift-text {
-    font-size: 18px;
-    color: #5a4a42;
-    margin-bottom: 10px;
+.collage {
+  width: 300px;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  box-shadow: 0 12px 30px rgba(90,74,66,0.25);
+}
+
+.collage.zoomed {
+  transform: scale(1.6);
+}
+
+.back-btn {
+  margin-top: 10px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .collage {
+    width: 240px;
   }
+  .collage.zoomed {
+    transform: scale(1.3);
+  }
+}
+
+/* ========================================================= */
+/* ======================= PAGE 8 ========================== */
+/* ========================================================= */
+
+#page8 {
+  flex-direction: column;
+  padding-top: 50px;
+  background: linear-gradient(180deg, #fff7f2, #fff1f6);
+}
+
+.page8-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #5a4a42;
+  margin-bottom: 24px;
+}
+
+.page8-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(160,120,110,0.25);
+}
+
+.page8-text {
+  font-size: 19px;
+  color: #5a4a42;
+  line-height: 1.6;
+}
+
+.page8-footer {
+  margin-top: 30px;
+  font-size: 16px;
+  color: #8a6f64;
+}
 </style>
 </head>
 
@@ -146,50 +220,58 @@
 
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
-  <img src="dubi_cat2.jpg" class="main-img">
-  <div class="text">
-    Dubi got something for you! <br>
-    Do you wanna see it?
-  </div>
-  <div class="buttons">
-    <button onclick="yesClick()">YES</button>
-    <button onclick="noClick()">NO</button>
+  <div class="content">
+    <img src="dubi_cat2.jpg" class="main-img">
+    <div class="text">
+      Dubi got something for you!<br>
+      Do you wanna see it?
+    </div>
+    <div class="button-group">
+      <button onclick="yesClick()">YES</button>
+      <button onclick="noClick()">NO</button>
+    </div>
   </div>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page" id="page2">
-  <img src="angry_cat.jpg" class="main-img">
-  <div class="text">
-    HOW DARE YOU PANDI 😤 <br>
-    Go back and click YES
-  </div>
-  <div class="buttons">
-    <button onclick="goBack()">BACK</button>
+  <div class="content">
+    <img src="angry_cat.jpg" class="main-img">
+    <div class="text">
+      HOW DARE YOU PANDI 😤<br>
+      Go back and click YES
+    </div>
+    <div class="button-group">
+      <button onclick="goBack()">BACK</button>
+    </div>
   </div>
 </div>
 
 <!-- PAGE 3 -->
 <div class="page" id="page3">
-  <img src="cute_surprise_cat.jpg" class="main-img">
-  <div class="text">
-    Hehe! <br>
-    Click below for the surprise!!
-  </div>
-  <div class="buttons">
-    <button onclick="nextPage()">Next</button>
+  <div class="content">
+    <img src="cute_surprise_cat.jpg" class="main-img">
+    <div class="text">
+      Hehe!<br>
+      Click below for the surprise!!
+    </div>
+    <div class="button-group">
+      <button onclick="nextPage()">Next</button>
+    </div>
   </div>
 </div>
 
 <!-- PAGE 4 -->
 <div class="page" id="page4">
-  <img src="black_cat_lingerie.jpg" class="main-img">
-  <div class="text" style="color:#3a2e2c;">
-    Oops!!! Sorry <br>
-    Just kidding 🫣
-  </div>
-  <div class="buttons">
-    <button onclick="nextPage4()">Next</button>
+  <div class="content">
+    <img src="black_cat_lingerie.jpg" class="main-img">
+    <div class="text" style="color:#3a2e2c;">
+      Oops!!! Sorry<br>
+      Just kidding 🫣
+    </div>
+    <div class="button-group">
+      <button onclick="nextPage4()">Next</button>
+    </div>
   </div>
 </div>
 
@@ -198,7 +280,6 @@
   <div class="title">Pick your gifts 🎁</div>
 
   <div class="gift-container">
-
     <div class="gift-card">
       <img src="cat_us.jpg" class="gift-img">
       <div class="gift-text">US 😁</div>
@@ -216,65 +297,50 @@
       <div class="gift-text">Greetings 🌹</div>
       <button onclick="goToPage8()">View</button>
     </div>
-
   </div>
 </div>
 
 <!-- PAGE 6 -->
 <div class="page" id="page6">
-  <div class="text">Page 6 💕<br>US content goes here</div>
+  <div class="page6-title">CHIPI and DUBI 🥹</div>
+  <img src="chipi_dubi.jpg" class="collage" onclick="this.classList.toggle('zoomed')">
+  <button class="back-btn" onclick="backToGifts()">← Back to gifts 🎁</button>
 </div>
 
 <!-- PAGE 7 -->
 <div class="page" id="page7">
-  <div class="text">Page 7 💌<br>Your letter goes here</div>
+  <div class="content">
+    <div class="text">Page 7 💌<br>Letter coming soon</div>
+  </div>
 </div>
 
 <!-- PAGE 8 -->
 <div class="page" id="page8">
-  <div class="text">Page 8 🌹<br>Greetings go here</div>
+  <div class="page8-title">Happy New Year, Chipi 🎉</div>
+
+  <div class="page8-card">
+    <div class="page8-text">
+      I hope this new year brings you calm days,<br>
+      warm smiles, and little moments that make you happy.<br><br>
+
+      May everything you’re hoping for slowly find its way to you,<br>
+      and may this year be gentle with your heart. 🌙
+    </div>
+  </div>
+
+  <div class="page8-footer">🐾 Always wishing the best for you</div>
 </div>
 
 <script>
-  function noClick() {
-    page1.classList.remove("active");
-    page2.classList.add("active");
-  }
-
-  function goBack() {
-    page2.classList.remove("active");
-    page1.classList.add("active");
-  }
-
-  function yesClick() {
-    page1.classList.remove("active");
-    page3.classList.add("active");
-  }
-
-  function nextPage() {
-    page3.classList.remove("active");
-    page4.classList.add("active");
-  }
-
-  function nextPage4() {
-    page4.classList.remove("active");
-    page5.classList.add("active");
-  }
-
-  function goToPage6() {
-    page5.classList.remove("active");
-    page6.classList.add("active");
-  }
-
-  function goToPage7() {
-    page5.classList.remove("active");
-    page7.classList.add("active");
-  }
-
-  function goToPage8() {
-    page5.classList.remove("active");
-    page8.classList.add("active");
-  }
+function noClick(){ page1.classList.remove("active"); page2.classList.add("active"); }
+function goBack(){ page2.classList.remove("active"); page1.classList.add("active"); }
+function yesClick(){ page1.classList.remove("active"); page3.classList.add("active"); }
+function nextPage(){ page3.classList.remove("active"); page4.classList.add("active"); }
+function nextPage4(){ page4.classList.remove("active"); page5.classList.add("active"); }
+function goToPage6(){ page5.classList.remove("active"); page6.classList.add("active"); }
+function goToPage7(){ page5.classList.remove("active"); page7.classList.add("active"); }
+function goToPage8(){ page5.classList.remove("active"); page8.classList.add("active"); }
+function backToGifts(){ page6.classList.remove("active"); page5.classList.add("active"); }
 </script>
 
 </body>
