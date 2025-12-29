@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You 💌</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .page {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .active {
+    display: flex;
+  }
+
+  /* PAGE BACKGROUNDS */
+  #page1, #page3 {
+    background: #fff7f2; /* soft peach */
+  }
+
+  #page2 {
+    background: #ffe2e2; /* soft angry pink */
+  }
+
+  #page4 {
+    background: #f2f2f5; /* soft gray-lavender */
+  }
+
+  #page5 {
+    background: #fff7f2; /* soft peach for finale */
+  }
+
+  /* IMAGES */
+  .main-img {
+    max-width: 260px;
+    max-height: 260px;
+    object-fit: contain;
+    animation: fadeIn 1.2s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* TEXT */
+  .text {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #5a4a42;
+  }
+
+  /* BUTTONS */
+  .buttons {
+    margin-top: 25px;
+  }
+
+  button {
+    padding: 10px 28px;
+    font-size: 15px;
+    margin: 0 10px;
+    border-radius: 22px;
+    border: 1px solid #e867ae;
+    background: white;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    color: #f479ac;
+    box-shadow: 0 4px 8px rgba(199,161,122,0.45);
+    transition: all 0.2s ease;
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* PAGE 2 BUTTON COLOR */
+  #page2 button {
+    color: #b94a4a;
+    box-shadow: 0 4px 8px rgba(185,74,74,0.4);
+    border-color: #d98b8b;
+  }
+
+  /* PAGE 4 BUTTON COLOR */
+  #page4 button {
+    color: #3a2e2c;
+    border-color: #5a4a42;
+    box-shadow: 0 4px 8px rgba(58,46,44,0.45);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <img src="dubi_cat2.jpg" class="main-img" alt="cute cat">
+
+  <div class="text">
+    Dubi got something for you! <br>
+    Do you wanna see it?
+  </div>
+
+  <div class="buttons">
+    <button onclick="yesClick()">YES</button>
+    <button onclick="noClick()">NO</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <img src="angry_cat.jpg" class="main-img" alt="angry cat">
+
+  <div class="text">
+    HOW DARE YOU PANDI😤 <br>
+    Go back and click YES
+  </div>
+
+  <div class="buttons">
+    <button onclick="goBack()">BACK</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <img src="cute_surprise_cat.jpg" class="main-img" alt="surprise cat">
+
+  <div class="text">
+    Hehe! <br>
+    click below for the surprise!!
+  </div>
+
+  <div class="buttons">
+    <button onclick="nextPage()">Next</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <img src="black_cat_lingerie.jpg" class="main-img" alt="black cat">
+
+  <div class="text" style="color:#3a2e2c;">
+    Oops!!! Sorry <br>
+    Just kidding🫣
+  </div>
+
+  <div class="buttons">
+    <button onclick="nextPage4()">Next</button>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+  <div class="text">
+    🎉 Surprise finale! 💖 <br>
+    Hope you enjoyed this little adventure!
+  </div>
+</div>
+
+<script>
+  function noClick() {
+    page1.classList.remove("active");
+    page2.classList.add("active");
+  }
+
+  function goBack() {
+    page2.classList.remove("active");
+    page1.classList.add("active");
+  }
+
+  function yesClick() {
+    page1.classList.remove("active");
+    page3.classList.add("active");
+  }
+
+  function nextPage() {
+    page3.classList.remove("active");
+    page4.classList.add("active");
+  }
+
+  function nextPage4() {
+    page4.classList.remove("active");
+    page5.classList.add("active");
+  }
+</script>
+
+</body>
+</html>
