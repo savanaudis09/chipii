@@ -31,20 +31,20 @@
   }
 
   /* PAGE BACKGROUNDS */
-  #page1, #page3 {
-    background: #fff7f2; /* soft peach */
+  #page1, #page3, #page5 {
+    background: #fff7f2;
   }
 
   #page2 {
-    background: #ffe2e2; /* soft angry pink */
+    background: #ffe2e2;
   }
 
   #page4 {
-    background: #f2f2f5; /* soft gray-lavender */
+    background: #f2f2f5;
   }
 
-  #page5 {
-    background: #fff7f2; /* soft peach for finale */
+  #page6, #page7, #page8 {
+    background: #fff7f2;
   }
 
   /* IMAGES */
@@ -96,18 +96,48 @@
     transform: translateY(-2px);
   }
 
-  /* PAGE 2 BUTTON COLOR */
+  /* PAGE 2 BUTTON */
   #page2 button {
     color: #b94a4a;
-    box-shadow: 0 4px 8px rgba(185,74,74,0.4);
     border-color: #d98b8b;
   }
 
-  /* PAGE 4 BUTTON COLOR */
+  /* PAGE 4 BUTTON */
   #page4 button {
     color: #3a2e2c;
     border-color: #5a4a42;
-    box-shadow: 0 4px 8px rgba(58,46,44,0.45);
+  }
+
+  /* PAGE 5 STYLES */
+  .title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #5a4a42;
+    margin-bottom: 40px;
+  }
+
+  .gift-container {
+    display: flex;
+    gap: 40px;
+  }
+
+  .gift-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gift-img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+
+  .gift-text {
+    font-size: 18px;
+    color: #5a4a42;
+    margin-bottom: 10px;
   }
 </style>
 </head>
@@ -116,13 +146,11 @@
 
 <!-- PAGE 1 -->
 <div class="page active" id="page1">
-  <img src="dubi_cat2.jpg" class="main-img" alt="cute cat">
-
+  <img src="dubi_cat2.jpg" class="main-img">
   <div class="text">
     Dubi got something for you! <br>
     Do you wanna see it?
   </div>
-
   <div class="buttons">
     <button onclick="yesClick()">YES</button>
     <button onclick="noClick()">NO</button>
@@ -131,13 +159,11 @@
 
 <!-- PAGE 2 -->
 <div class="page" id="page2">
-  <img src="angry_cat.jpg" class="main-img" alt="angry cat">
-
+  <img src="angry_cat.jpg" class="main-img">
   <div class="text">
-    HOW DARE YOU PANDI😤 <br>
+    HOW DARE YOU PANDI 😤 <br>
     Go back and click YES
   </div>
-
   <div class="buttons">
     <button onclick="goBack()">BACK</button>
   </div>
@@ -145,13 +171,11 @@
 
 <!-- PAGE 3 -->
 <div class="page" id="page3">
-  <img src="cute_surprise_cat.jpg" class="main-img" alt="surprise cat">
-
+  <img src="cute_surprise_cat.jpg" class="main-img">
   <div class="text">
     Hehe! <br>
-    click below for the surprise!!
+    Click below for the surprise!!
   </div>
-
   <div class="buttons">
     <button onclick="nextPage()">Next</button>
   </div>
@@ -159,13 +183,11 @@
 
 <!-- PAGE 4 -->
 <div class="page" id="page4">
-  <img src="black_cat_lingerie.jpg" class="main-img" alt="black cat">
-
+  <img src="black_cat_lingerie.jpg" class="main-img">
   <div class="text" style="color:#3a2e2c;">
     Oops!!! Sorry <br>
-    Just kidding🫣
+    Just kidding 🫣
   </div>
-
   <div class="buttons">
     <button onclick="nextPage4()">Next</button>
   </div>
@@ -173,10 +195,44 @@
 
 <!-- PAGE 5 -->
 <div class="page" id="page5">
-  <div class="text">
-    🎉 Surprise finale! 💖 <br>
-    Hope you enjoyed this little adventure!
+  <div class="title">Pick your gifts 🎁</div>
+
+  <div class="gift-container">
+
+    <div class="gift-card">
+      <img src="cat_us.jpg" class="gift-img">
+      <div class="gift-text">US 😁</div>
+      <button onclick="goToPage6()">View</button>
+    </div>
+
+    <div class="gift-card">
+      <img src="cat_letter.jpg" class="gift-img">
+      <div class="gift-text">Letter 💌</div>
+      <button onclick="goToPage7()">View</button>
+    </div>
+
+    <div class="gift-card">
+      <img src="cat_greetings.jpg" class="gift-img">
+      <div class="gift-text">Greetings 🌹</div>
+      <button onclick="goToPage8()">View</button>
+    </div>
+
   </div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+  <div class="text">Page 6 💕<br>US content goes here</div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+  <div class="text">Page 7 💌<br>Your letter goes here</div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="page8">
+  <div class="text">Page 8 🌹<br>Greetings go here</div>
 </div>
 
 <script>
@@ -203,6 +259,21 @@
   function nextPage4() {
     page4.classList.remove("active");
     page5.classList.add("active");
+  }
+
+  function goToPage6() {
+    page5.classList.remove("active");
+    page6.classList.add("active");
+  }
+
+  function goToPage7() {
+    page5.classList.remove("active");
+    page7.classList.add("active");
+  }
+
+  function goToPage8() {
+    page5.classList.remove("active");
+    page8.classList.add("active");
   }
 </script>
 
