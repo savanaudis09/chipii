@@ -25,70 +25,47 @@ body {
   text-align: center;
 }
 
-.page.active {
-  display: flex;
-}
+.page.active { display: flex; }
 
-/* ================= COMMON CONTENT LAYOUT ================= */
+/* ================= COMMON ================= */
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 90%;
   gap: 28px;
+  max-width: 90%;
 }
 
 /* ================= BACKGROUNDS ================= */
-#page1, #page3, #page5, #page7, #page8 {
-  background: #fff7f2;
-}
+#page1, #page3, #page5, #page7 { background: #fff7f2; }
 #page2 { background: #ffe2e2; }
 #page4 { background: #f2f2f5; }
 
-/* ================= PAGE 6 PAW BACKGROUND ================= */
+/* ================= PAGE 6 ================= */
 #page6 {
-  background-color: #fffaf6;
+  background-color: #faebdf;
   background-image: url("data:image/svg+xml,%3Csvg width='140' height='140' viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cbbeb3' fill-opacity='0.35'%3E%3Cpath d='M40 55c6 0 11-5 11-11s-5-11-11-11-11 5-11 11 5 11 11 11zm60 0c6 0 11-5 11-11s-5-11-11-11-11 5-11 11 5 11 11 11zM55 40c0 6 5 11 11 11s11-5 11-11-5-11-11-11-11 5-11 11zm0 60c0 10 15 16 25 16s25-6 25-16-15-22-25-22-25 12-25 22z'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 160px 160px;
 }
 
 /* ================= IMAGES ================= */
-.main-img {
-  width: 260px;
-  max-width: 80%;
-  object-fit: contain;
-}
+.main-img { width: 260px; max-width: 80%; }
 
 /* ================= TEXT ================= */
-.text {
-  font-size: 20px;
-  color: #5a4a42;
-  line-height: 1.4;
-}
+.text { font-size: 20px; color: #5a4a42; }
 
 /* ================= BUTTONS ================= */
-.button-group {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+.button-group { display: flex; gap: 18px; }
 
 button {
   padding: 12px 28px;
-  font-size: 14px;
   border-radius: 22px;
   border: 1px solid #e2b7c9;
-  background: #ffffff;
+  background: #fff;
   cursor: pointer;
   font-family: 'Comfortaa', cursive;
   color: #c86b97;
   box-shadow: 0 4px 10px rgba(180,140,120,0.3);
-  transition: transform 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-2px);
 }
 
 /* ================= PAGE 5 ================= */
@@ -100,13 +77,12 @@ button:hover {
 #page5 .title {
   font-size: 26px;
   font-weight: 600;
-  color: #5a4a42;
   margin-bottom: 45px;
 }
 
 .gift-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 40px;
 }
 
@@ -121,11 +97,12 @@ button:hover {
   width: 180px;
   height: 180px;
   object-fit: contain;
+  margin-bottom: 12px;
 }
 
-.gift-text {
-  font-size: 18px;
-  color: #5a4a42;
+@media (max-width:768px) {
+  .gift-container { grid-template-columns: repeat(2,1fr); }
+  .gift-card:last-child { grid-column: span 2; }
 }
 
 /* ---- Mobile: 2 + 1 layout ---- */
@@ -145,27 +122,16 @@ button:hover {
   gap: 22px;
 }
 
-.page6-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #5a4a42;
-}
+.page6-title { font-size: 24px; }
 
 .collage {
   width: 300px;
   border-radius: 18px;
   cursor: pointer;
-  transition: transform 0.4s ease;
-  box-shadow: 0 12px 30px rgba(90,74,66,0.25);
+  transition: transform .4s;
 }
 
-.collage.zoomed {
-  transform: scale(1.6);
-}
-
-.back-btn {
-  margin-top: 10px;
-}
+.collage.zoomed { transform: scale(1.6); }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
@@ -177,41 +143,188 @@ button:hover {
   }
 }
 
-/* ========================================================= */
-/* ======================= PAGE 8 ========================== */
-/* ========================================================= */
-
+/* ================= PAGE 8 ================= */
 #page8 {
   flex-direction: column;
-  padding-top: 50px;
-  background: linear-gradient(180deg, #fff7f2, #fff1f6);
+  padding-top: 40px;
+  background: radial-gradient(circle at top, #2b1055, #0f0c29);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.page8-wrapper {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
 }
 
 .page8-title {
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 600;
-  color: #5a4a42;
-  margin-bottom: 24px;
+  color: #ffd6ff;
 }
 
 .page8-card {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 20px;
-  padding: 28px 24px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 30px;
   max-width: 520px;
-  box-shadow: 0 10px 30px rgba(160,120,110,0.25);
+  backdrop-filter: blur(6px);
 }
 
-.page8-text {
-  font-size: 19px;
-  color: #5a4a42;
-  line-height: 1.6;
+.page8-text { font-size: 20px; line-height: 1.7; }
+
+/* ✨ SPARKLY LINE FIREWORKS */
+.firework {
+  position: absolute;
+  width: 3px;
+  height: 28px;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  pointer-events: none;
+  animation: explode 1.2s ease-out forwards;
+  box-shadow: 0 0 12px currentColor;
 }
 
-.page8-footer {
-  margin-top: 30px;
-  font-size: 16px;
-  color: #8a6f64;
+@keyframes explode {
+  from {
+    transform: translate(0,0) rotate(var(--r)) scaleY(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--x),var(--y)) rotate(var(--r)) scaleY(0);
+    opacity: 0;
+  }
+}
+
+/* ======== ADDITION ONLY (START OVER) ======== */
+.start-over {
+  font-size: 18px;
+  color: #ffd6ff;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(255,214,255,0.7);
+  transition: opacity 0.6s;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* ======== ADDITION ONLY (PAW CURSOR) 🐾 ======== */
+button:hover,
+img:hover,
+.collage:hover,
+.gift-card:hover,
+.start-over:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>&#128062;</text></svg>") 16 16, pointer;
+}
+
+/* ================= PAGE 7 (CUSTOM DESIGN ONLY) ================= */
+#page7 {
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 50px 20px;
+  background: radial-gradient(
+    circle at top,
+    #1e2238 0%,
+    #14172a 55%,
+    #0d0f1c 100%
+  );
+}
+
+.page7-letter {
+  width: 100%;
+  max-width: 720px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 28px;
+  padding: 40px 30px;
+  font-family: "Gabriola", cursive;
+  font-size: 23px;
+  line-height: 1.7;
+  color: #6b3a4a;
+  box-shadow: 0 20px 40px rgba(180,120,140,0.25);
+  animation: fadeSlide 1.5s ease;
+  margin-bottom: 40px;
+  text-align: left;
+  letter-spacing: 0.4px;
+  word-spacing: 3px;
+}
+
+.page7-letter::before {
+  content: "🐾";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+
+  font-size: 56px;
+  opacity: 0.12;
+
+  pointer-events: none;
+  user-select: none;
+
+  filter: drop-shadow(0 0 10px rgba(255,210,160,0.35));
+}
+
+.page7-letter::after {
+  content: "🐈‍⬛";
+  position: sticky;
+  display: block;
+
+  bottom: 18px;
+  margin-left: auto;
+  width: fit-content;
+
+  font-size: 120px;
+  opacity: 0.10;
+
+  pointer-events: none;
+  user-select: none;
+
+  filter: drop-shadow(0 0 14px rgba(255,210,160,0.35));
+}
+
+.page7-letter br {
+  line-height: 0.8;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page7-heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  animation: floatUp 10s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-120vh); }
+} 
+
+/* Allow scrolling INSIDE page 7 */
+#page7 {
+  justify-content: flex-start;       /* start from top */
+  align-items: center;
+  overflow-y: auto;
+  text-align: left;                  /* horizontal reading */
+}
+
+/* Ensure button stays visible */
+#page7 button {
+  margin-bottom: 40px;
+}
+
+/* Paw cursor on the letter */
+.page7-letter:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>&#128062;</text></svg>") 16 16, pointer;
 }
 </style>
 </head>
@@ -222,10 +335,7 @@ button:hover {
 <div class="page active" id="page1">
   <div class="content">
     <img src="dubi_cat2.jpg" class="main-img">
-    <div class="text">
-      Dubi got something for you!<br>
-      Do you wanna see it?
-    </div>
+    <div class="text">Dubi got something for you!<br>Do you wanna see it?</div>
     <div class="button-group">
       <button onclick="yesClick()">YES</button>
       <button onclick="noClick()">NO</button>
@@ -237,13 +347,8 @@ button:hover {
 <div class="page" id="page2">
   <div class="content">
     <img src="angry_cat.jpg" class="main-img">
-    <div class="text">
-      HOW DARE YOU PANDI 😤<br>
-      Go back and click YES
-    </div>
-    <div class="button-group">
-      <button onclick="goBack()">BACK</button>
-    </div>
+    <div class="text">HOW DARE YOU PANDI 😤<br>Go back and click YES</div>
+    <button onclick="goBack()">BACK</button>
   </div>
 </div>
 
@@ -251,13 +356,8 @@ button:hover {
 <div class="page" id="page3">
   <div class="content">
     <img src="cute_surprise_cat.jpg" class="main-img">
-    <div class="text">
-      Hehe!<br>
-      Click below for the surprise!!
-    </div>
-    <div class="button-group">
-      <button onclick="nextPage()">Next</button>
-    </div>
+    <div class="text">Hehe!<br>Click below for the surprise!!</div>
+    <button onclick="nextPage()">Next</button>
   </div>
 </div>
 
@@ -265,33 +365,25 @@ button:hover {
 <div class="page" id="page4">
   <div class="content">
     <img src="black_cat_lingerie.jpg" class="main-img">
-    <div class="text" style="color:#3a2e2c;">
-      Oops!!! Sorry<br>
-      Just kidding 🫣
-    </div>
-    <div class="button-group">
-      <button onclick="nextPage4()">Next</button>
-    </div>
+    <div class="text">Oops!!! Sorry<br>Just kidding 🫣</div>
+    <button onclick="nextPage4()">Next</button>
   </div>
 </div>
 
 <!-- PAGE 5 -->
 <div class="page" id="page5">
   <div class="title">Pick your gifts 🎁</div>
-
   <div class="gift-container">
     <div class="gift-card">
       <img src="cat_us.jpg" class="gift-img">
       <div class="gift-text">US 😁</div>
       <button onclick="goToPage6()">View</button>
     </div>
-
     <div class="gift-card">
       <img src="cat_letter.jpg" class="gift-img">
       <div class="gift-text">Letter 💌</div>
       <button onclick="goToPage7()">View</button>
     </div>
-
     <div class="gift-card">
       <img src="cat_greetings.jpg" class="gift-img">
       <div class="gift-text">Greetings 🌹</div>
@@ -304,31 +396,56 @@ button:hover {
 <div class="page" id="page6">
   <div class="page6-title">CHIPI and DUBI 🥹</div>
   <img src="chipi_dubi.jpg" class="collage" onclick="this.classList.toggle('zoomed')">
-  <button class="back-btn" onclick="backToGifts()">← Back to gifts 🎁</button>
+  <button onclick="backToGifts()">← Back to gifts 🎁</button>
 </div>
 
-<!-- PAGE 7 -->
+<!-- PAGE 7 (CUSTOM LETTER) -->
 <div class="page" id="page7">
-  <div class="content">
-    <div class="text">Page 7 💌<br>Letter coming soon</div>
+  <div class="page7-letter">
+To Chipii,<br>
+Ahhhhh chipiiiii I'm soo excited to start this, it's been many months that I've written something to u, infact it's been many months that I wrote a very heartfelt message, and today I'm gonna write it down again and it's for uuuuhhhh🤭🤭🤭 uk chipii i actually wanted to give u a hand written letter but since we won't be meeting on 1st, I planned to make it up to u this way. And i hope u liked it and will like it 😗😗<br><br>
+Soo as far as the best part in this year for me has been talking to u, I still can't forget how u looked at me in the mess and that's when u became my crush 😅 and never thought I would talk to u and we would become this goooooddd frnds.  I'm so glad that I met chipii, soo far now in my life you are so special and my favourite person and as I always say u will always have the same place in my life even in the future.<br><br>
+
+Before thanking u, I wanna be sorry for the times that I haven't been there for u, for my mood swings, for the misunderstandings, for the things that hurt u unintentionally. Dubi always wants to see u happy and wants to make u happy in anyways. I'll be always there for u chipii, just say me okay?? <br><br>
+
+I wanna thank you for always being there on my side, understanding me, bringing back my smile, listening to me, helping me in all ways, and most importantly thank you for making making me a very good girl and a hvw 🥹🫂
+Your existence just made my year soo better and I wish with all my heart that we gonna be the same till our lifetime Ik I'm over exaggerating, but chipii don't leave dubi okay, it's ok if u get busy with some work but don't even think of leaving me or stop talking to me chipii. You mean a lot to me chipii.
+Dubi likes spending time with u, saying all things to u, eat ur brain, annoy u, come to u even if there's a little inconvenience, tell all the secrets which ppl asked me not to say anyone 😗, play with u, have seggss with u, kiss u, hug u, wt not chipi I like everything that includes u 😁😁 You gave me the best friendship that I've never thought i could get in my life.
+I never thought we could make it this far, I could do anything for u just to see u smile, from the day one I've been saying that ur smile is adorable and I still do adore u when u smile, and it reminds me of the small chipi with those teeth and chubby cheeks 🤭. Even a small text from u brighten up my day chipii, idk wt kind of magic u hold but it's amazing chipii, no no, U are amazing chipii, chipi is amazing. TBH u are the best best person that I've ever met in my life, u are soo perfect chipi, u got everything within u, everything a man should have, u are so rare chipii just like u say ur are single piece 😌 stay the way u are chipiii. Uk chipii i feel the most happiest when u act childish like a kid i like to see u like that 🥰, seeing u happy makes me happy chipii. 
+Soo many ppl came into my life chipii but it's with only u whom I feel the safest, did  all the wierd things 😌 and hence I be like a stupid but chipii ig I'm not that stupid 🤔🤔<br><br>
+
+As i sit and see anything happening around me, in those things some on the other reminds me of u chipii, like if chipii is there it would be nice, chipii likes this naa, chipii would enjoy this soo much, it's good if chipi and I do it togather, even chipi says this, many many things reminds me of u chipii, especially when I miss u the most. 
+Every moment that I've spent with u is like a dream chipii literally, no one would ever believe if I say something that happened between us like our secrets🤫, the way we talk to eachother everyday without fail, laughing on vc, everything is like a dream only chipii, and and and this reminded me of something chipii even though uk it I'm gonna say it again soo listen, I still do can't forget the day when I wrote ur assignment and came to the 1st floor through lift to give it to u, whereas u wearing a white shirt and blue jeans came from staircase and took the assignment and gave me a kiss and went back becuz it's already late for ur class, and the unexpected moment that happened is, u coming back again and giving me a kiss againnnnnnnm🫠🫠🫠🫠 it's it's just sooo romantic, cinematic chipii, ahhhh again one more thing chipii, 🫣🫣🫣 us kissing on the staircase beside ece lab ahhhhh chipiiiii, just thinking of them and texting abt them is giving me butterflies in my stomachhhh chipiiiii 😩😩I just can't forget those, and and chipii sooo many of I keep on saying it would probably become a book😭😭
+Life is soo better with u in it even when u are far away chipi and ig uk this, although we text eachother everyday I'll always get soo excited when I see ur text saying " dubi " 
+Uk wt chipii I like it when u tease me or annoy me 😗😗😗 becuz i see u being happy and i like it sooo much 😁😁😁😁 remember chipii dubi will the person who is the super proudest of u, and pray for ur success nd health, wish for ur happiness and hope for all ur dreams to come true. Dubi will be the biggest support of u chipii, no matter what I'll stay by ur side only 🙂‍↕️🙂‍↕️<br><br>
+
+Ig it's too much naaa chipii but dubi can write more for u and if u say u have the patience to read it all then I'll write it moreeee for u😚😚
+Lastly I wanna say, idk wt future holds, but I surely know that my support and care for u will never change. As long as I'm there u will have Dubi by ur side, chipii🫂🫂🫂<br>
+From Dubi
   </div>
+
+  <button style="margin-top:30px" onclick="page7.classList.remove('active'); page5.classList.add('active');">
+    ← Back to gifts 🎁
+  </button>
 </div>
 
 <!-- PAGE 8 -->
-<div class="page" id="page8">
-  <div class="page8-title">Happy New Year, Chipi 🎉</div>
-
-  <div class="page8-card">
-    <div class="page8-text">
-      I hope this new year brings you calm days,<br>
-      warm smiles, and little moments that make you happy.<br><br>
-
-      May everything you’re hoping for slowly find its way to you,<br>
-      and may this year be gentle with your heart. 🌙
+<div class="page" id="page8" onclick="firework(event)">
+  <div class="page8-wrapper">
+    <div class="page8-title">🎆 Happy New Year, Chipi 🎆</div>
+    <div class="page8-card">
+      <div class="page8-text">
+        Meow Meow to 2026 ✨<br><br>
+        Here’s to a fresh start.
+        I wish you endless happiness, luck, strength, good health, opportunities, and achievements, whatever the good thing in the world find its way to uuuu!!!<br><br>
+        And no matter what, may your all days be filled with smiles💗
+      </div>
     </div>
+    <button onclick="event.stopPropagation(); page8.classList.remove('active'); page5.classList.add('active');">
+      ← Back to gifts 🎁
+    </button>
+    <div class="start-over" onclick="startOver(event)">Start over 😽</div>
   </div>
-
-  <div class="page8-footer">🐾 Always wishing the best for you</div>
 </div>
 
 <script>
@@ -341,7 +458,40 @@ function goToPage6(){ page5.classList.remove("active"); page6.classList.add("act
 function goToPage7(){ page5.classList.remove("active"); page7.classList.add("active"); }
 function goToPage8(){ page5.classList.remove("active"); page8.classList.add("active"); }
 function backToGifts(){ page6.classList.remove("active"); page5.classList.add("active"); }
-</script>
 
+function firework(e){ createFirework(e.clientX,e.clientY); }
+
+function createFirework(x,y){
+  const colors=['#ff4ecd','#ffd700','#7df9ff','#ff884d','#b388ff','#7CFF00'];
+  for(let i=0;i<40;i++){
+    const p=document.createElement("div");
+    p.className="firework";
+    p.style.left=x+"px";
+    p.style.top=y+"px";
+    p.style.color=colors[Math.floor(Math.random()*colors.length)];
+    p.style.setProperty("--x",`${(Math.random()-0.5)*420}px`);
+    p.style.setProperty("--y",`${(Math.random()-0.5)*420}px`);
+    p.style.setProperty("--r",`${Math.random()*360}deg`);
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),1200);
+  }
+}
+
+setInterval(()=>{
+  if(page8.classList.contains("active")){
+    createFirework(Math.random()*innerWidth,Math.random()*innerHeight*0.6);
+  }
+},450);
+
+function startOver(e){
+  e.stopPropagation();
+  page8.classList.add("fade-out");
+  setTimeout(()=>{
+    page8.classList.remove("active","fade-out");
+    page1.classList.add("active");
+  },1000);
+}
+</script>
 </body>
 </html>
+
