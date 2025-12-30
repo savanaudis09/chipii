@@ -121,7 +121,7 @@ button {
 /* ================= PAGE 6 ================= */
 #page6 {
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 300px;
   padding-bottom: 60px;  
   gap: 22px;
 }
@@ -129,7 +129,7 @@ button {
 .page6-title { font-size: 24px; }
 
 .collage {
-  width: 300px;
+  width: 30px;
   max-width: 90%;
   border-radius: 18px;
   cursor: pointer;
@@ -236,10 +236,7 @@ img:hover,
 
 /* ================= PAGE 7 (CUSTOM DESIGN ONLY) ================= */
 #page7 {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-
   overflow-y: auto;
   padding: 50px 20px;
   padding-bottom: 60px;  
@@ -256,7 +253,7 @@ img:hover,
   max-width: 660px;
   background: rgba(255,255,255,0.85);
   border-radius: 28px;
-  padding: 50px 20px;
+  padding: 10px 10px 10px;
   font-family: "Gabriola", cursive;
   font-size: 20px;
   line-height: 1.7;
@@ -268,9 +265,6 @@ img:hover,
   letter-spacing: 0.5px;
   word-spacing: 3px;
   position: relative;
-  justify-content: flex-start;
-  align-items: center;
-  overflow-y: auto;
 }
 
 .page7-letter::before {
@@ -319,10 +313,18 @@ img:hover,
   to { transform: translateY(-120vh); }
 } 
 
+/* Allow scrolling INSIDE page 7 */
+#page7 {
+  justify-content: flex-start;       /* start from top */
+  align-items: center;
+  overflow-y: auto;
+  text-align: left;                  /* horizontal reading */
+}
+
 /* Ensure button stays visible */
 #page7 button {
   margin-top: 10px;
-  margin-bottom: 0;
+  margin-bottom: 130px;
 }
 
 /* Paw cursor on the letter */
