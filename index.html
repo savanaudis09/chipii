@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
-<title>For You 💌</title>
+<title>For You </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 /* ================= BASE ================= */
-body {
+html, body {
   margin: 0;
   font-family: 'Comfortaa', cursive;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -256,10 +257,13 @@ img:hover,
 
 .page7-letter::before {
   content: "🐾";
-  position: absolute;
+  position: sticky;
+  display: block;
+
   top: 18px;
   left: 18px;
-
+  width: fit-content;
+  
   font-size: 56px;
   opacity: 0.12;
 
@@ -326,6 +330,44 @@ img:hover,
 .page7-letter:hover {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>&#128062;</text></svg>") 16 16, pointer;
 }
+
+/*===== GLOBAL MOBILE TEXT FIX ===== */
+@media (max-width: 768px) {
+
+  html {
+    font-size: 19px;
+  }
+
+  .text,
+  .page7-letter,
+  .page8-text,
+  .page6-title {
+    font-size: 1.05rem;
+  }
+
+  button {
+    font-size: 1rem;
+  }
+}
+
+/* ===== MOBILE PAGE HEIGHT FIX (IMPORTANT) ===== */
+@media (max-width: 768px) {
+  .page {
+    position: relative;
+    min-height: 100vh;
+  }
+}
+
+/* 🔥 FINAL MOBILE FIX — PAGE 8 */
+@media (max-width: 768px) {
+  #page8 {
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+
 </style>
 </head>
 
@@ -472,7 +514,7 @@ function createFirework(x,y){
     p.style.setProperty("--x",`${(Math.random()-0.5)*420}px`);
     p.style.setProperty("--y",`${(Math.random()-0.5)*420}px`);
     p.style.setProperty("--r",`${Math.random()*360}deg`);
-    document.body.appendChild(p);
+    page8.appendChild(p);
     setTimeout(()=>p.remove(),1200);
   }
 }
