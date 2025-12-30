@@ -98,9 +98,9 @@ button {
 
 .gift-img {
   width: 180px;
-  height: 180px;
+  height: 160px;
   object-fit: contain;
-  margin-bottom: 12px;
+  margin-bottom: 1p0x;
 }
 
 @media (max-width:768px) {
@@ -129,13 +129,14 @@ button {
 .page6-title { font-size: 24px; }
 
 .collage {
-  width: 300px;
+  width: 420px;
+  max-width: 95%;
   border-radius: 18px;
   cursor: pointer;
   transition: transform .4s;
 }
 
-.collage.zoomed { transform: scale(1.6); }
+.collage.zoomed { transform: scale(1.8); }
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
@@ -143,7 +144,7 @@ button {
     width: 240px;
   }
   .collage.zoomed {
-    transform: scale(1.3);
+    transform: scale(1.5);
   }
 }
 
@@ -176,7 +177,7 @@ button {
   background: rgba(255,255,255,0.12);
   border-radius: 24px;
   padding: 30px;
-  max-width: 520px;
+  max-width: 380px;
   backdrop-filter: blur(6px);
 }
 
@@ -249,25 +250,26 @@ img:hover,
 
 .page7-letter {
   width: 80%;
-  max-width: 670px;
+  max-width: 660px;
   background: rgba(255,255,255,0.85);
   border-radius: 28px;
-  padding: 40px 10px;
+  padding: 10px 10px 10px;
   font-family: "Gabriola", cursive;
   font-size: 20px;
   line-height: 1.7;
   color: #6b3a4a;
   box-shadow: 0 20px 40px rgba(180,120,140,0.25);
   animation: fadeSlide 1.5s ease;
-  margin-bottom: 20px;
+  margin-bottom: 6px;
   text-align: left;
   letter-spacing: 0.5px;
   word-spacing: 3px;
+  position: relative;
 }
 
 .page7-letter::before {
   content: "🐾";
-  position: sticky;
+  position: absolute;
   display: block;
 
   top: 18px;
@@ -285,14 +287,10 @@ img:hover,
 
 .page7-letter::after {
   content: "🐈‍⬛";
-  position: sticky;
-  display: block;
-
-  bottom: 18px;
-  margin-left: auto;
-  width: fit-content;
-
-  font-size: 120px;
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
+  font-size: 100px;
   opacity: 0.10;
 
   pointer-events: none;
@@ -310,14 +308,6 @@ img:hover,
   to { opacity: 1; transform: translateY(0); }
 }
 
-.page7-heart {
-  position: fixed;
-  bottom: -20px;
-  font-size: 18px;
-  animation: floatUp 10s linear infinite;
-  opacity: 0.4;
-}
-
 @keyframes floatUp {
   from { transform: translateY(0); }
   to { transform: translateY(-120vh); }
@@ -333,8 +323,8 @@ img:hover,
 
 /* Ensure button stays visible */
 #page7 button {
-  margin-top: 0.1px;
-  margin-bottom: 80px;
+  margin-top: 10px;
+  margin-bottom: 130px;
 }
 
 /* Paw cursor on the letter */
@@ -607,4 +597,3 @@ function startOver(e){
 </script>
 </body>
 </html>
-
