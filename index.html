@@ -60,6 +60,7 @@ html, body {
 
 button {
   padding: 12px 28px;
+  margin-bottom: 60px;
   border-radius: 22px;
   border: 1px solid #e2b7c9;
   background: #fff;
@@ -72,7 +73,8 @@ button {
 /* ================= PAGE 5 ================= */
 #page5 {
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 60px;  
 }
 
 #page5 .title {
@@ -119,7 +121,8 @@ button {
 /* ================= PAGE 6 ================= */
 #page6 {
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 60px;  
   gap: 22px;
 }
 
@@ -147,7 +150,8 @@ button {
 /* ================= PAGE 8 ================= */
 #page8 {
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 60px;  
   background: radial-gradient(circle at top, #2b1055, #0f0c29);
   color: #fff;
   position: relative;
@@ -177,6 +181,10 @@ button {
 }
 
 .page8-text { font-size: 20px; line-height: 1.7; }
+
+#page8 button{
+  margin-bottom: 10px;
+}
 
 /* ✨ SPARKLY LINE FIREWORKS */
 .firework {
@@ -208,6 +216,7 @@ button {
   cursor: pointer;
   text-shadow: 0 0 10px rgba(255,214,255,0.7);
   transition: opacity 0.6s;
+  margin-top: 0.1px;
 }
 
 .fade-out {
@@ -229,6 +238,7 @@ img:hover,
   flex-direction: column;
   overflow-y: auto;
   padding: 50px 20px;
+  padding-bottom: 60px;  
   background: radial-gradient(
     circle at top,
     #1e2238 0%,
@@ -238,20 +248,20 @@ img:hover,
 }
 
 .page7-letter {
-  width: 100%;
-  max-width: 720px;
+  width: 90%;
+  max-width: 670px;
   background: rgba(255,255,255,0.85);
   border-radius: 28px;
-  padding: 40px 30px;
+  padding: 40px 10px;
   font-family: "Gabriola", cursive;
-  font-size: 23px;
+  font-size: 20px;
   line-height: 1.7;
   color: #6b3a4a;
   box-shadow: 0 20px 40px rgba(180,120,140,0.25);
   animation: fadeSlide 1.5s ease;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: left;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.5px;
   word-spacing: 3px;
 }
 
@@ -323,7 +333,8 @@ img:hover,
 
 /* Ensure button stays visible */
 #page7 button {
-  margin-bottom: 40px;
+  margin-top: 0.1px;
+  margin-bottom: 80px;
 }
 
 /* Paw cursor on the letter */
@@ -367,6 +378,66 @@ img:hover,
   }
 }
 
+/* ===== MOBILE FIX — PAGE 5 ===== */
+@media (max-width: 768px) {
+  #page5 {
+    justify-content: flex-start;
+    padding-top: 30px;
+    padding-bottom: 60px; /* 👈 important */
+    overflow-y: auto;
+  }
+
+  .gift-container {
+    gap: 28px;
+  }
+
+  .gift-card button {
+    margin-bottom: 12px;
+  }
+}
+
+/* ===== MOBILE FIX — PAGE 6 ===== */
+@media (max-width: 768px) {
+  #page6 {
+    justify-content: center;
+    padding-top: 0;       /* 👈 remove extra gap */
+    padding-bottom: 40px;
+  }
+}
+
+/* ===== MOBILE FIX — PAGE 7 ===== */
+@media (max-width: 768px) {
+
+  #page7 {
+    padding: 20px 12px;
+  }
+
+  .page7-letter {
+    padding: 26px 18px;        /* 👈 reduce congestion */
+    font-size: 1rem;
+    line-height: 1.6;
+    border-radius: 22px;
+  }
+
+  #page7 button {
+    width: 100%;
+    max-width: 320px;
+    margin: 30px auto 60px;    /* 👈 visible when scrolled */
+    display: block;
+  }
+}
+
+/* ===== MOBILE FIX — PAGE 8 ALIGNMENT ===== */
+@media (max-width: 768px) {
+  #page8 {
+    justify-content: center;   /* 👈 center vertically */
+    padding-top: 0;
+  }
+
+  .page8-wrapper {
+    margin-top: 0;
+  }
+}
 
 </style>
 </head>
@@ -466,7 +537,7 @@ Lastly I wanna say, idk wt future holds, but I surely know that my support and c
 From Dubi
   </div>
 
-  <button style="margin-top:30px" onclick="page7.classList.remove('active'); page5.classList.add('active');">
+  <button style="margin-top: 15px" onclick="page7.classList.remove('active'); page5.classList.add('active');">
     ← Back to gifts 🎁
   </button>
 </div>
