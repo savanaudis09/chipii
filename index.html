@@ -239,7 +239,7 @@ img:hover,
 
 .page7-letter {
   width: 100%;
-  max-width: 100%;
+  max-width: 720px;
   background: rgba(255,255,255,0.85);
   border-radius: 28px;
   padding: 40px 30px;
@@ -253,8 +253,6 @@ img:hover,
   text-align: left;
   letter-spacing: 0.4px;
   word-spacing: 3px;
-  overflow-x: hidden;
-  word-break: break-word;
 }
 
 .page7-letter::before {
@@ -363,27 +361,11 @@ img:hover,
 /* 🔥 FINAL MOBILE FIX — PAGE 8 */
 @media (max-width: 768px) {
   #page8 {
+    height: 100dvh;
     min-height: 100dvh;
-    overflow: auto;
-  }
-  .page8-wrapper {
-    padding-bottom: 60px;
+    overflow: hidden;
   }
 }
-
-@media (max-width: 768px) {
-  .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #page5,
-  #page6 {
-    padding-bottom: 40px;
-  }
-}
-
 
 
 </style>
@@ -482,13 +464,12 @@ Uk wt chipii I like it when u tease me or annoy me 😗😗😗 becuz i see u be
 Ig it's too much naaa chipii but dubi can write more for u and if u say u have the patience to read it all then I'll write it moreeee for u😚😚
 Lastly I wanna say, idk wt future holds, but I surely know that my support and care for u will never change. As long as I'm there u will have Dubi by ur side, chipii🫂🫂🫂<br>
 From Dubi
-  <div style="text-align:center; margin-top:40px;">
-    <button onclick="page7.classList.remove('active'); page5.classList.add('active');">
-      ← Back to gifts 🎁
-    </button>
   </div>
-</div>
 
+  <button style="margin-top:30px" onclick="page7.classList.remove('active'); page5.classList.add('active');">
+    ← Back to gifts 🎁
+  </button>
+</div>
 
 <!-- PAGE 8 -->
 <div class="page" id="page8" onclick="firework(event)">
@@ -555,4 +536,3 @@ function startOver(e){
 </script>
 </body>
 </html>
-
