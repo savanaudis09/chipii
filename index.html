@@ -121,21 +121,23 @@ button {
 /* ================= PAGE 6 ================= */
 #page6 {
   flex-direction: column;
-  padding-top: 40px;
+  padding-top: 300px;
+  padding-bottom: 60px;  
   gap: 22px;
 }
 
 .page6-title { font-size: 24px; }
 
 .collage {
-  width: 300px;
+  width: 30px;
+  max-width: 90%;
   border-radius: 18px;
   cursor: pointer;
   transition: transform .4s;
 }
 
-.collage.zoomed { transform: scale(1.6); }
-  
+.collage.zoomed { transform: scale(1.8); }
+
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .collage {
@@ -238,6 +240,7 @@ img:hover,
   overflow-y: auto;
   padding: 50px 20px;
   padding-bottom: 60px;  
+  margin-right: 20px;
   background: radial-gradient(
     circle at top,
     #1e2238 0%,
@@ -255,6 +258,7 @@ img:hover,
   font-family: "Gabriola", cursive;
   font-size: 20px;
   line-height: 1.7;
+  margin-right: 20px;
   color: #6b3a4a;
   box-shadow: 0 20px 40px rgba(180,120,140,0.25);
   animation: fadeSlide 1.5s ease;
@@ -322,7 +326,7 @@ img:hover,
 /* Ensure button stays visible */
 #page7 button {
   margin-top: 10px;
-  margin-bottom: 130px;
+  margin-bottom: 200px;
 }
 
 /* Paw cursor on the letter */
@@ -398,6 +402,7 @@ img:hover,
 
   #page7 {
     padding: 20px 12px;
+    margin-right: 20px;
   }
 
   .page7-letter {
@@ -407,13 +412,14 @@ img:hover,
     line-height: 1.6;
     border-radius: 22px;
     padding-bottom: 70px;
+    margin-right: 20px;
   }
 
   #page7 button {
     width: 100%;
     max-width: 320px;
     margin: 30px auto 60px;
-    margin-bottom: 80px;
+    margin-bottom: 160px;
     display: block;
   }
 }
@@ -598,5 +604,3 @@ function startOver(e){
 </script>
 </body>
 </html>
-
-
