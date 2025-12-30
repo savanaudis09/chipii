@@ -117,8 +117,38 @@ button {
     grid-column: span 2;
   }
 }
-
+  
 /* ================= PAGE 6 ================= */
+#page6 {
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 60px;  
+  gap: 22px;
+}
+
+.page6-title { font-size: 24px; }
+
+.collage {
+  width: 300px;
+  max-width: 90%;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform .4s;
+}
+
+.collage.zoomed { transform: scale(1.8); }
+  
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .collage {
+    width: 240px;
+  }
+  .collage.zoomed {
+    transform: scale(1.5);
+  }
+}lign-items: center;
+  gap: 14px;
+}
 
 /* ================= PAGE 8 ================= */
 #page8 {
@@ -135,37 +165,7 @@ button {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  a#page6 {
-  flex-direction: column;
-  padding-top: 300px;
-  padding-bottom: 60px;  
-  gap: 22px;
-}
-
-.page6-title { font-size: 24px; }
-
-.collage {
-  width: 300px;
-  max-width: 90%;
-  border-radius: 18px;
-  cursor: pointer;
-  transition: transform .4s;
-}
-
-.collage.zoomed { transform: scale(1.8); }
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .collage {
-    width: 240px;
-  }
-  .collage.zoomed {
-    transform: scale(1.5);
-  }
-}lign-items: center;
-  gap: 14px;
-}
-
+  
 .page8-title {
   font-size: 32px;
   font-weight: 600;
@@ -603,5 +603,6 @@ function startOver(e){
 </script>
 </body>
 </html>
+
 
 
